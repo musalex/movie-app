@@ -9,6 +9,7 @@ const searchBar = (props) => {
             placeholder = "Search..."   
             onChange = {props.change} 
             value = {props.val}
+            ref = {props.myRef}
         />
     );
 }
