@@ -1,0 +1,28 @@
+.Movie {
+    width: 260px;
+    height: 440px;
+    background-color: #bbb;
+    margin: 10px;
+    margin-bottom: 20px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.Card {
+    width: 100%;
+    height: 375px;
+    border-radius: 5px 5px 0 0;
+}
+
+.Title {
+    margin: 3px 5px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Vote {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    color: green;
+}
