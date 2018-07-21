@@ -4,6 +4,7 @@ import Movies from '../../components/Movies/Movies';
 import SearchBar from '../../components/SearchBar/SearchBar';
 import debounce from '../../debounce';
 import Spinner from '../../components/Spinner/Spinner';
+import styles from './MoviesPage.css';
 
 const key = '?api_key=daff65c036673bf55ddef790e717e11d';
 
@@ -16,13 +17,14 @@ class MoviesPage extends PureComponent {
             loading: true,
         }
 
-        this.inputRef = React.createRef();
+        //this.inputRef = React.createRef();
         this.updateData = debounce(this.updateData, 700);
     }
     
     
     componentDidMount() {
         console.log('[DidMount]', this.props)
+        console.log(this.inputRef)
         let {queryName, id} = this.props.match.params;
         let path = queryName ? '/search/' + encodeURI(queryName) : '/popular';
         let url = (queryName ? '/search/movie' + key + '&query=' + encodeURI(queryName) : '/movie/popular' + key);
@@ -54,7 +56,8 @@ class MoviesPage extends PureComponent {
 
     componentDidUpdate() {
         console.log('[DidUpdate]', this.props);
-        this.updateData()
+        this.updateData();
+        this.inputRef.focus();
     }
 
     changeHandler = (e) => {
@@ -85,8 +88,18 @@ class MoviesPage extends PureComponent {
 
     render() {
         console.log('Loading = ', this.state.loading)
-
-        let movies = (this.state.data && this.state.data.results) || null;
+        let displayElement = <Spinner />;
+        if (!this.state.loading) {
+            let movies = this.state.data.results;
+            displayElement = (
+                <div className={styles.NoResults}>
+                    No search results
+                </div>
+            )
+            if (movies.length) {
+                displayElement = <Movies data = {movies} />
+            }
+        }
         return (
             <React.Fragment>
                 <SearchBar
@@ -94,17 +107,10 @@ class MoviesPage extends PureComponent {
                     change = {this.changeHandler} 
                     val = {this.props.match.params.queryName || ''}
                 />
-                {!this.state.loading ? movies.length ? <Movies data = {movies}/> : 'No search results' : <Spinner />}
+                {displayElement}
             </React.Fragment>
         );
     }
 }
-
-// function getPage(page) {
-//     axios.get('/movie/popular' + key + '&page=' + page)
-//         .then(response => {
-//             console.log(response.data)
-//         })
-// }
 
 export default MoviesPage;
