@@ -9,8 +9,9 @@ class App extends Component {
       <BrowserRouter>
         <React.Fragment>
           <Switch>
-            <Route path="/movies/popular/page/:id" component={MoviesPage} />
-            <Route path="/movies/search/:queryName/page/:id" component={MoviesPage} />
+            <Route path="/movies/popular/page/:pageNumber" component={MoviesPage} />
+            <Route path="/movies/search/:queryName/page/:pageNumber" component={MoviesPage} />
+            <Route path="/movie/:id" />
             <Redirect to="/movies/popular/page/1" />
           </Switch>
         </React.Fragment>
