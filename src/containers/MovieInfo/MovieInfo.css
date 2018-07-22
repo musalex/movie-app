@@ -1,0 +1,97 @@
+.Wrap {
+    height: 100%;
+    margin: auto;
+}
+
+.BackDrop {
+    height: 120px;
+    background-repeat: no-repeat;
+    background-color: rgba(83, 56, 56, 0.63);
+    background-position: 50% 40%;
+    filter: blur(1.3px) contrast(180%) brightness(1.1) saturate(60%);
+    margin-bottom: 20px;
+}
+.BackDropColor {
+    height: 100%;
+    background-color: rgba(19, 60, 87, 0.849);
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.Poster {
+    width: 350px;
+    height: 525px;
+    margin: 10px 0;
+}
+
+.PosterWrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Information {
+    box-sizing: border-box;
+    width: 95%;
+    font-size: 18px;
+    margin: auto;
+}
+.Information table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0px;
+}
+.Information table tr:nth-child(2n + 1) {
+    background: rgb(134, 86, 86);
+}
+
+.InfoWrap {
+    display: flex;
+    flex-flow:row wrap;
+}
+
+.Description {
+    padding: 4px;
+    margin-top: 40px;
+}
+
+
+@media (min-width:650px) {
+	.Wrap {
+        width: 80%;
+    }
+
+    .BackDrop {
+        height: 200px;;
+    }
+
+    .BackDropColor {
+        font-size: 50px;
+    }
+
+    .PosterWrap {
+        display: block;
+        width: 350px;
+        margin: 10px 1px;
+    }
+    
+    .Information {
+        width: calc(100% - 400px);
+        margin-top: 20px;
+        margin-left: 40px;
+    }
+}
+
+@media (min-width: 650px) {
+    .BackDrop {
+        filter: blur(1.5px) contrast(180%) brightness(1.1) saturate(60%);
+        background-position: 0 50%;
+    }
+}
+
