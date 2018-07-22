@@ -6,7 +6,7 @@ const imageNotFound = 'https://static1.squarespace.com/static/541339f0e4b06a3d53
 
 
 const movie = ({data}) => {
-    let imagePath = data.poster_path ? 'http://image.tmdb.org/t/p/w300/' + data.poster_path : imageNotFound;
+    let imagePath = data.poster_path ? 'http://image.tmdb.org/t/p/w300' + data.poster_path : imageNotFound;
         return (
         <div className={css.Movie}>
             <Link to={`/movie/${data.id}`}>
