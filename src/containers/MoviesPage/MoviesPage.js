@@ -6,8 +6,7 @@ import debounce from '../../debounce';
 import Spinner from '../../components/Spinner/Spinner';
 import styles from './MoviesPage.css';
 import PageSwitcher from '../../components/PageSwitcher/PageSwitcher';
-
-const key = '?api_key=daff65c036673bf55ddef790e717e11d';
+import key from '../../api_key';
 
 class MoviesPage extends PureComponent {
     constructor(props) {
