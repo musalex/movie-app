@@ -1,0 +1,24 @@
+.InfoType {
+    width: 35%;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.InfoRow {
+    height: 45px;
+}
+
+.InfoDesc {
+    width: 65%;
+}
+
+@media (min-width:650px) {
+    .InfoDesc {
+        width: 70%;
+    }
+
+    .InfoType {
+        width: 30%;
+    }
+}
+
