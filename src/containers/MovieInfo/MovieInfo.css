@@ -13,7 +13,7 @@
 }
 .BackDropColor {
     height: 100%;
-    background-color: rgba(19, 60, 87, 0.849);
+    background-color: rgba(31, 91, 131, 0.849);
     color: white;
     font-size: 30px;
     display: flex;
@@ -47,9 +47,9 @@
     border-collapse: collapse;
     border-spacing: 0px;
 }
-.Information table tr:nth-child(2n + 1) {
-    background: rgb(134, 86, 86);
-}
+/* .Information table tr:nth-child(2n) {
+    background: rgb(158, 47, 62);
+} */
 
 .InfoWrap {
     display: flex;
@@ -64,7 +64,7 @@
 
 @media (min-width:650px) {
 	.Wrap {
-        width: 80%;
+        width: 85%;
     }
 
     .BackDrop {
@@ -90,7 +90,7 @@
 
 @media (min-width: 650px) {
     .BackDrop {
-        filter: blur(1.5px) contrast(180%) brightness(1.1) saturate(60%);
+        filter: blur(1.55px) contrast(180%) brightness(1.1) saturate(60%);
         background-position: 0 50%;
     }
 }
