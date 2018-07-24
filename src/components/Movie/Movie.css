@@ -1,11 +1,15 @@
 .Movie {
+    min-width: 260px;
     width: 260px;
     height: 450px;
-    background-color: #bbb;
+    background-color: rgb(187, 187, 187);
     margin: 10px;
     margin-bottom: 20px;
     position: relative;
     border-radius: 5px;
+    color: #000;
+    display: inline-block;
+    transition-duration: 0.3s;
 }
 
 .Card {
@@ -18,6 +22,7 @@
     margin: 3px 5px;
     font-weight: bold;
     text-align: center;
+    font-size: 15px;
 }
 
 .Vote {
@@ -34,4 +39,37 @@
     left: 5px;
     font-weight: 600;
     color: rgb(179, 127, 32);
+}
+
+.Favorite {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    border-radius: 30px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: rgba(196, 196, 17, 0.63);
+    opacity: 0;
+}
+
+
+.FavoriteAdded {
+    background-color: rgba(224, 109, 14, 0.884);
+    opacity: 1;
+}
+
+.FavoriteRemoved {
+    background-color: rgba(196, 196, 17, 0.63);
+}
+
+.Favorite:hover {
+    transition-duration: 0.3s;
+    background-color: rgba(224, 109, 14, 0.884);
+}
+
+
+.Movie:hover .FavoriteRemoved {
+    opacity: 1;
 }
