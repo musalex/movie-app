@@ -3,7 +3,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80px;
+    width: 40px;
     height: 90%;
     top: 0;
 }
@@ -18,11 +18,9 @@
     color: #555;
     border: 40px solid transparent;	
     border-left: 40px solid rgba(75, 70, 88, 0.308);
-    /* transform: scale(0.5); */
 }
 
 .PageSwitcher:hover {
-    /* background: rgba(98, 104, 138, 0.514); */
     border-left-color: rgba(41, 44, 51, 0.753);
     transition-duration: 0.2s;
     cursor: pointer;
