@@ -1,0 +1,15 @@
+.Nav {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    font-size: 25px;
+}
+
+.Nav a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+.NavLinkActive {
+    color: red;
+}

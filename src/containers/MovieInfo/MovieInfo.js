@@ -5,6 +5,7 @@ import key from '../../api_key';
 import css from './MovieInfo.css';
 import MovieInfoRow from '../../components/MovieInfoRow/MovieInfoRow';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
+import Navigation from '../../components/Navigation/Navigation';
 
 const imageSite = 'https://image.tmdb.org/t/p';
 const backdrop = '/w1400_and_h450_face';
@@ -49,14 +50,10 @@ class MovieInfo extends Component {
     }
 
     componentDidMount() {
-        console.log('[MovieEl DidMount]', this.props);
         this.fetchData();
-
     }
     componentDidUpdate() {
-        let id = this.props.match.params.id;
-        console.log('[DidUpdate] ', this.state.data.id == id);
-        if (this.state.data.id != id) {
+        if (this.state.data.id !== +this.props.match.params.id) {
             this.fetchData();
         }
     }
@@ -112,6 +109,7 @@ class MovieInfo extends Component {
                             {this.state.data.title}
                         </div>
                     </div>
+                    <Navigation />
                     <div className = {css.InfoWrap}>
                         <div className = {css.PosterWrap}>
                             <img 
