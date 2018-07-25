@@ -9,18 +9,18 @@ const imageNotFound = 'https://static1.squarespace.com/static/541339f0e4b06a3d53
 const movie = (props) => {
     let imagePath = props.data.poster_path ? 'http://image.tmdb.org/t/p/w300' + props.data.poster_path : imageNotFound;
     let style = { transform: `scale(${props.k})` };
-    let isFavorite = props.favorites.indexOf(props.data.id + '') !== -1;
+    let isFavorite = props.favorites.findIndex(e=>{
+        return e.id === props.data.id
+    }) !== -1;
     let favClass = [css.Favorite, isFavorite ? css.FavoriteAdded : css.FavoriteRemoved].join(' ');
 
     function localHandler(e) {
-        console.log('click');
-        let isFavorite = props.favorites.indexOf(props.data.id + '') !== -1;
-        console.log(props.favorites);
-        let id = props.data.id + '';
+        let movie = props.data;
+        let isFavorite = props.favorites.findIndex(e=>e.id === movie.id) !== -1;
         if (!isFavorite) {
-            props.onFavAdd(id)
+            props.onFavAdd(movie)
         } else {
-            props.onFavDel(id)
+            props.onFavDel(movie)
         }
     }
         return (
@@ -59,8 +59,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        onFavAdd: (id) => dispatch({type: 'ADD_FAV', id: id}),
-        onFavDel: (id) => dispatch({type: 'DEL_FAV', id: id})
+        onFavAdd: (movie) => dispatch({type: 'ADD_FAV', movie}),
+        onFavDel: (movie) => dispatch({type: 'DEL_FAV', movie})
     }
 }
 

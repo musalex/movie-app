@@ -5,7 +5,7 @@ import Movie from '../Movie/Movie';
 const similarMovies = ({data, myRef}) => {
     return (
         <div className = {css.Wrap}>
-            Similar Movies:
+            <h3>Similar Movies:</h3>
             <div ref ={myRef} className = {css.SimilarMovies}>
                 {data.map(item=>(
                     <Movie 

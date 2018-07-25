@@ -1,3 +1,13 @@
+.Wrap {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 90%;
+    top: 0;
+}
+
 .PageSwitcher {
     position: fixed;
     transition-duration: 0.3s;
@@ -6,8 +16,9 @@
     justify-content: center;
     font-weight: bold;
     color: #555;
-    border: 70px solid transparent;	
-    border-left: 70px solid rgba(75, 70, 88, 0.308);
+    border: 40px solid transparent;	
+    border-left: 40px solid rgba(75, 70, 88, 0.308);
+    /* transform: scale(0.5); */
 }
 
 .PageSwitcher:hover {
@@ -19,9 +30,9 @@
 }
 
 .Next {
-    right: -70px;
+    right: -40px;
 }
 .Prev {
-    left: -70px;
+    left: -40px;
     transform: rotate(180deg);
 }

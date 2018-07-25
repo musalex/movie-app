@@ -50,26 +50,14 @@
     border-radius: 30px;
     transition-duration: 0.4s;
     cursor: pointer;
-    background-color: rgba(196, 196, 17, 0.63);
-    opacity: 0;
+    opacity: 1;
 }
 
 
 .FavoriteAdded {
     background-color: rgba(224, 109, 14, 0.884);
-    opacity: 1;
 }
 
 .FavoriteRemoved {
     background-color: rgba(196, 196, 17, 0.63);
-}
-
-.Favorite:hover {
-    transition-duration: 0.3s;
-    background-color: rgba(224, 109, 14, 0.884);
-}
-
-
-.Movie:hover .FavoriteRemoved {
-    opacity: 1;
 }
