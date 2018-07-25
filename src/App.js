@@ -10,8 +10,15 @@ class App extends Component {
       <BrowserRouter>
         <React.Fragment>
           <Switch>
-            <Route path="/movies/popular/page/:pageNumber" component={MoviesPage} />
-            <Route path="/movies/search/:queryName/page/:pageNumber" component={MoviesPage} />
+            <Route path="/movies/popular/page/:pageNumber" render = {
+              (props) => <MoviesPage {...props} section="popular" />
+            } />
+            <Route path="/movies/search/:queryName/page/:pageNumber" render = {
+              (props) => <MoviesPage {...props} section="search" />
+            } />
+            <Route path="/movies/favorite/page/:pageNumber" render = {
+              (props) => <MoviesPage {...props} section="favorites" />
+            } />
             <Route path="/movie/:id" component={MovieInfo} />
             <Redirect to="/movies/popular/page/1" />
           </Switch>
