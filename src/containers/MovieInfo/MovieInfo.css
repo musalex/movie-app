@@ -47,9 +47,6 @@
     border-collapse: collapse;
     border-spacing: 0px;
 }
-/* .Information table tr:nth-child(2n) {
-    background: rgb(158, 47, 62);
-} */
 
 .InfoWrap {
     display: flex;
@@ -88,16 +85,6 @@
     }
 }
 
-.Home {
-    text-align: center;
-    color: #ccc;
-    text-decoration: none;
-    font-size: 30px;
-    color: red;
-}
-a {
-    text-decoration: none;
-}
 
 @media (min-width: 650px) {
     .BackDrop {
